@@ -61,7 +61,7 @@ class RomanNumeralTests extends FunSpec {
   describe("Converts a number to a roman numeral - Working with Strings, Tuples, Numbers"){
     it("Converts a single roman numeral correctly"){
       val input = 5
-      val expected = "V"
+      val expected = Some("V")
 
       val actual = RomanNumeral.convertIntToRoman(input)
       assert(actual === expected)
@@ -69,7 +69,7 @@ class RomanNumeralTests extends FunSpec {
 
     it("Converts a complex roman numeral"){
       val input = 1125
-      val expected = "MCXXV"
+      val expected = Some("MCXXV")
 
       val actual = RomanNumeral.convertIntToRoman(input)
       assert(actual === expected)
