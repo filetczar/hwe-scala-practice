@@ -7,17 +7,26 @@ object Miscellaneous {
       If None is provided, return None
       A humanYear is equivalent to four catYears
    */
-  def catsAge(humanAge: Option[Int]): Option[Int] = ???
+  def catsAge(humanAge: Option[Int]): Option[Int] = {
+    val cat: Option[Int] = humanAge.map(x => 4*x)
+    cat
+  }
 
   /*
     Given a list of Option[Ints], returns the minimum of the Ints provided.
     If no ints are provided, return None.
    */
-  def minimum(l: List[Option[Int]]): Option[Int] = ???
+  def minimum(l: List[Option[Int]]): Option[Int] = {
+    //val m: Option[Int] = l.min
+    l.flatten match {
+      case x => Some(x.min)
+      case Nil => None
+    }
+  }
 
   /*
     Checks if an attempted password is valid or invalid.
-    Password must contain at least one lowercase or one uppercase letter.
+    Password must contain at least one lowercase and one uppercase letter.
     Password must be over 8 long.
     A valid password returns the password back.
     An invalid password returns an exception.
